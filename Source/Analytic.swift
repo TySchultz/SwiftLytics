@@ -7,8 +7,8 @@
 
 import Foundation
 
-public protocol Analytic: Codable {
-  var title: String { get set }
-  var properties: [String: String] { get set }
-  var createdDate: Date { get set }
+struct Analytic: Codable {
+  var title: String
+  var properties: [String: String]
+  var createdDate: Date
 }

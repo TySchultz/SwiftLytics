@@ -12,28 +12,15 @@ import SwiftLytics
 class ViewController: UIViewController {
 
     @IBAction func onInfo(_ sender: Any) {
-      let analytic = TESTANALYTIC(title: "Tailwind Dashboard Tapped",
-                   properties: ["Category": "App",
-                                "Value": "1234",
-                                "TimelineValue": "Tripleg"])
-      SwiftLytic.shared.show(analytic: analytic)
+      SwiftLytic.shared.show(action: "Tailwind Dashboard Tapped",
+                             properties: ["Category": "App",
+                                          "Value": "1234",
+                                          "TimelineValue": "Tripleg"])
   }
-
     @IBAction func onText(_ sender: Any) {
-      let analytic = TESTANALYTIC(title: "Tailwind Dashboard Tapped",
-                                  properties: ["Category": "App",
-                                               "Action": "Tailwind Dashboard Tapped",
-                                               "Value": "1234",
-                                               "TimelineValue": "Tripleg"])
-      SwiftLytic.shared.show(analytic: analytic)
-
+      SwiftLytic.shared.show(action: "Tailwind Dashboard Tapped",
+                             properties: ["Category": "App",
+                                          "Value": "1234",
+                                          "TimelineValue": "Tripleg"])
     }
-
 }
-
-struct TESTANALYTIC: Analytic {
-  var title: String = ""
-  var properties: [String: String] = [:]
-  var createdDate: Date = Date()
-}
-

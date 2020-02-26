@@ -137,7 +137,7 @@ internal final class SwiftLyticView: UIView {
   private func configureText(analytic: Analytic) -> String {
     var str = analytic.title + "\n"
     for (key,value) in analytic.properties {
-      str += key + ": " + value + "\n"
+      str += key + ": " + String(describing: value) + "\n"
     }
     return str
   }

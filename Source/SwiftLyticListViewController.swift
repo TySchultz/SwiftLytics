@@ -129,7 +129,7 @@ class AnalyticCell: UITableViewCell {
   private func configureText(analytic: Analytic) -> String {
     var text = ""
     for (key,value) in analytic.properties {
-      text += key + ": " + value + "\n"
+      text += key + ": " + String(describing: value) + "\n"
     }
     return text
   }

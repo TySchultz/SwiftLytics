@@ -28,7 +28,9 @@ public class SwiftLytic {
 
   public func show(
     in view: UIView? = nil,
-    analytic: Analytic,
+    action: String,
+    properties: [String: String],
+    createdDate: Date? = nil,
     config: SwiftLytic.ViewConfiguration? = nil
   ) {
     let viewToUse: UIView?
@@ -38,7 +40,7 @@ public class SwiftLytic {
       viewToUse = view
     }
     guard let baseView = viewToUse else { return }
-
+    let analytic = Analytic(title: action, properties: properties, createdDate: createdDate ?? Date())
     // get rid of any view if currently displaying
     activeItem?.dismiss()
 
