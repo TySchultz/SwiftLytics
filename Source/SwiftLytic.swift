@@ -13,6 +13,8 @@ public class SwiftLytic {
 
   private var cache: [Analytic] = []
 
+  private var shouldShowAnalytics: Bool = true
+
     init() {
         NotificationCenter.default.addObserver(
             self,
@@ -33,6 +35,7 @@ public class SwiftLytic {
     createdDate: Date? = nil,
     config: SwiftLytic.ViewConfiguration? = nil
   ) {
+    guard shouldShowAnalytics else { return }
     let viewToUse: UIView?
     if view == nil, let top = UIApplication.shared.keyWindow?.rootViewController?.topMostChild {
       viewToUse = top.view
@@ -123,5 +126,9 @@ public class SwiftLytic {
     @objc func onOrientation(notification: NSNotification) {
         activeItem?.recenter()
     }
+
+  public func stopShowingAnalytics() {
+    shouldShowAnalytics = false
+  }
 
 }

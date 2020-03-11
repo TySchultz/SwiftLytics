@@ -26,6 +26,7 @@ class SwiftLyticListViewController: UITableViewController {
     self.tableView.estimatedRowHeight = 100.0
     self.tableView.rowHeight          = UITableView.automaticDimension;
     self.tableView.register(AnalyticCell.self, forCellReuseIdentifier: AnalyticCell.reuseIdentifier)
+    self.tableView.tableHeaderView = HeaderView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 80))
   }
 
   // MARK: - Table view data source
