@@ -22,10 +22,6 @@ let package = Package(
         .target(
             name: "SwiftLytics",
             dependencies: [],
-            path: "Source"),
-        .testTarget(
-            name: "SwiftLyticsTests",
-            dependencies: [],
-            path: "Source/Tests"),
+            path: "Source")
     ]
 )
